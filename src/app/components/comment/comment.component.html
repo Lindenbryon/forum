@@ -1,0 +1,11 @@
+<div fxLayout="row" style="border: 1px solid black;">
+    <div *ngIf="!loading" style="border-right: 1px solid black; padding:5px;">
+        {{ user.firstname }} {{ user.lastname }}
+    </div>
+    <div *ngIf="!loading" fxFlex style="padding:5px;">
+        {{ data.body }}
+    </div>
+    <div *ngIf="loading">
+        Loading user comments
+    </div>
+</div>

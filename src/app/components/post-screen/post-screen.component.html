@@ -1,0 +1,32 @@
+<div *ngIf="createMode">
+    <form [formGroup]="newPost" fxLayout="column">
+      <mat-form-field>
+        <input matInput placeholder="Subject" formControlName="subject" type="text" required>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Body" formControlName="body" required></textarea>
+      </mat-form-field>
+      <div>
+        <button mat-button (click)="create()">Create</button>
+      </div>
+    </form>
+</div>
+<div *ngIf="!createMode && !loading" fxLayout="column">
+    <div>
+        <strong>Subject:</strong><br />
+        {{post.subject}}
+    </div>
+    <div>
+        <strong>Contents:</strong><br />
+        {{post.body}}
+    </div>
+    <div>
+        <strong>Comments:</strong><br />
+        <comment *ngFor="let comment of comments" [comment]="comment"></comment>
+        <add-comment [postId]="id"></add-comment>
+    </div>
+    
+</div>
+<div *ngIf="!createMode && loading">
+    Loading Post Details
+</div>

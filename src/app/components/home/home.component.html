@@ -1,0 +1,10 @@
+<div *ngIf="loading">
+    Loading...
+</div>
+<div *ngIf="!loading && posts.length == 0">
+    No posts added yet
+</div>
+<div *ngIf="!loading">
+    <!-- Repeat over each post and display -->
+    <post *ngFor="let post of posts | async" [post]="post"></post>
+</div>

@@ -1,0 +1,14 @@
+<div>
+    <mat-toolbar color="primary" fxLayout="row">
+        Forum
+        <span fxFlex></span>
+        <div class="navigation">
+            <a routerLink="/login" style="color: #fff; text-decoration: none; margin: 0 5px;" *ngIf="!isLoggedIn">Login</a>
+            <a routerLink="/register" style="color: #fff; text-decoration: none; margin: 0 5px;" *ngIf="!isLoggedIn">Register</a>
+            <a *ngIf="isLoggedIn" style="color: #fff; text-decoration: none; margin: 0 5px;" routerLink="/home" >Posts</a>
+            <a *ngIf="isLoggedIn" style="color: #fff; text-decoration: none; margin: 0 5px;" routerLink="/post/create" >Create Post</a>
+            <a *ngIf="isLoggedIn" style="color: #fff; text-decoration: none; margin: 0 5px;" (click)="logout()">Logout</a>
+        </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</div>
