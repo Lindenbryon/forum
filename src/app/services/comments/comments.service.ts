@@ -19,6 +19,10 @@ export class CommentsService {
   get(id: string){
       return this.afs.collection("comments", ref => ref.where("postId", "==", id)).snapshotChanges();
   }
+  getComment(id: string){
+      return this.afs.collection("comments").doc(id).snapshotChanges();
+  }
+  
   add(uid : string, postId: string, body: string)
   {
       return new Promise((resolve, reject) => {
@@ -31,5 +35,11 @@ export class CommentsService {
            resolve();
       });
       
+  }
+  edit(id: string, body: string){
+      return new Promise((resolve, reject) => {
+          this.afs.collection("comments").doc(id).update({ body: body });
+          resolve();
+      });
   }
 }

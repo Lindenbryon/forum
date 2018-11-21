@@ -24,7 +24,6 @@ export class CommentComponent implements OnInit {
       this.id = this.comment.payload.doc.id;
       this.data = this.comment.payload.doc.data(); 
       this.currentUserId = this.auth.uid;
-      console.log(this.data.userId);
       this.userService.get(this.data.userId).subscribe((user) =>{
           this.user = user.payload.data();
           this.loading = false;

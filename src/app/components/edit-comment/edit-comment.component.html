@@ -1,3 +1,12 @@
-<p>
-  edit-comment works!
-</p>
+<div fxLayout="column" style="margin:10px;">
+    <div *ngIf="!loading">
+        <textarea name="body" rows="8" [(ngModel)]="body" style="width: 100%;" placeholder="Enter comment here"></textarea>
+    </div>
+    <div *ngIf="loading">
+        Loading Comment
+    </div>
+    <div fxLayout="row">
+        <span fxFlex></span>
+        <button mat-button mat-raised-button (click)="editComment()">Edit Comment</button>
+    </div>
+</div>
