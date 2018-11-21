@@ -1,10 +1,11 @@
-<div fxLayout="row" style="border: 1px solid black;">
+<div fxLayout="row" style="border: 1px solid black; margin-bottom:5px;">
     <div *ngIf="!loading" style="border-right: 1px solid black; padding:5px;">
         {{ user.firstname }} {{ user.lastname }}
     </div>
     <div *ngIf="!loading" fxFlex style="padding:5px;">
         {{ data.body }}
     </div>
+    <button *ngIf="data.userId === currentUserId" mat-button mat-raised-button (click)="edit()">Edit</button>
     <div *ngIf="loading">
         Loading user comments
     </div>

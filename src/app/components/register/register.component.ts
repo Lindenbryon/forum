@@ -42,7 +42,8 @@ export class RegisterComponent implements OnInit {
       let lastname = this.AdditionalInfo.controls.lastname.value;
       if(firstname !== "" && lastname !== ""){
           this.fbAuth.assignInfo(firstname, lastname).then(() => {
-              this.fbAuth.login(this.EmailPassword.controls.email.value, this.EmailPassword.controls.password.value);
+              //this.fbAuth.login(this.EmailPassword.controls.email.value, this.EmailPassword.controls.password.value);
+              this.router.navigate([ '/home' ]);
           });
       }
   }

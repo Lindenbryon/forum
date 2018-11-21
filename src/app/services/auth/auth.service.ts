@@ -59,6 +59,7 @@ export class AuthService {
             user.lastname = lastname;
             this.user = user;
             
+            console.log(this.uid);            
             //Publish to firebase
             let users = this.afs.collection<User>('users');
             users.doc(this.uid).set(user);
@@ -74,6 +75,7 @@ export class AuthService {
                 let doc = this.afs.collection<User>('users').doc(userObj.user.uid);
                 doc.ref.get().then((document) => {
                     let data = document.data();
+                    
                     this.uid = userObj.user.uid;
                     
                     let user = {} as User;

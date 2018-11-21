@@ -19,6 +19,7 @@ import { PostComponent } from './components/post/post.component';
 import { PostScreenComponent } from './components/post-screen/post-screen.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { AddCommentComponent } from './components/add-comment/add-comment.component';
+import { EditCommentComponent } from './components/edit-comment/edit-comment.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AddCommentComponent } from './components/add-comment/add-comment.compon
     PostComponent,
     PostScreenComponent,
     CommentComponent,
-    AddCommentComponent
+    AddCommentComponent,
+    EditCommentComponent
   ],
   imports: [
     BrowserModule,
