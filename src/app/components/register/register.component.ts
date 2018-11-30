@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
       }
   }
   assignInfo(){
-      console.log
+      
       let firstname = this.AdditionalInfo.controls.firstname.value;
       let lastname = this.AdditionalInfo.controls.lastname.value;
       if(firstname !== "" && lastname !== ""){

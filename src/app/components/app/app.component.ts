@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
 import {Router} from "@angular/router"
+
 @Component({
   selector: 'forum',
   templateUrl: './app.component.html',
